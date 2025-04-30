@@ -31,17 +31,17 @@
             <nav class="nav-menu" :class="{ 'open': VerMobileMenu }">
                 <a href="index.html">Home</a>
                 <a href="#product">Produtos</a>
-                <a href="">Carrinho</a>
+                <a href="carrinho.html">Carrinho</a>
                 <a href="#sobre">Sobre</a>
             </nav>
             <div class="header-icons">
                 <input type="text" placeholder="Pesquisar..." class="search-input">
                 <div class="cart-container" @click="AlterarCart">
-                    <img src="assets/images/cart.png" alt="Carrinho" class="cart-icon">
+                    <a href="carrinho.html"><img src="assets/images/cart.png" alt="Carrinho" class="cart-icon"></a>
                     <span class="cart-count" v-if="cart.length > 0">{{ cart.length }}</span>
                 </div>
                 <div class="user">
-                    <img src="assets/images/user.png" alt="">
+                    <a href="cadastro.html"><img src="assets/images/user.png" alt=""></a>
                 </div>
             </div>
         </header>
@@ -94,7 +94,7 @@
                 <div class="conteudo-banner">
                     <h2>Universo Monster High</h2>
                     <p>Participe dessa aventura assustadoramente divertida!</p>
-                    <button class="button">Cadastrar</button>
+                    <a href="cadastro.html"><button class="button">Cadastrar</button></a>
                 </div>
                 <div class="monster-banner-image">
                     <img src="assets/images/bannerDracula.png" alt="Personagem Monster High">

@@ -425,23 +425,27 @@ footer {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .button {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .color-circle {
-    padding: 10px;
-    width: 15px;
-    height: 15px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-  
-  .carousel-container {
-    height: 200px;
-  }
+form{
+  text-align: center;
 }
+.barra-horizontal {
+  background-color: #fc00c5;
+  height: 5px;
+  width: 210px;
+}
+.campo-input{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  
+}
+.lembrar-me{
+  display: flex;
+  gap: 5px;
+}
+
+
+
+ 
+
+ 

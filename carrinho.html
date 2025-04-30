@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <title>Monster High Shop</title>
+
+    <!--VUE CDN-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="">
+            </a>
+            <div class="alterar-menu" @click="AlterarMenu">
+                <img v-if="!VerMobileMenu" src="assets/images/menu-traco.png" alt="Abrir menu">
+                <img v-else src="assets/images/fechar.png" alt="Fechar menu">
+            </div>
+            <nav class="nav-menu" :class="{ 'open': VerMobileMenu }">
+                <a href="index.html">Home</a>
+                <a href="#product">Produtos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="cadastro.html">cadastro</a>
+            </nav>
