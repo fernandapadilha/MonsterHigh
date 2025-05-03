@@ -426,21 +426,29 @@ footer {
 }
 
 form{
-  text-align: center;
+  text-align: -webkit-center;
+  margin-top: 3rem;
+}
+.contem-forms{
+  width: 300px;
+  background-color: pink;
+  text-align: -webkit-center;
 }
 .barra-horizontal {
-  background-color: #fc00c5;
-  height: 5px;
   width: 210px;
+  background-color: #4a004f;
+  height: 3px;
+ 
 }
 .campo-input{
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  display: flex;
   
+
 }
 .lembrar-me{
-  display: flex;
+  
   gap: 5px;
 }
 
