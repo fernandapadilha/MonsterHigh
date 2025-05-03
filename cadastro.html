@@ -36,27 +36,88 @@
             </nav>
         </header>
     </div>
-    <form action="">
-   <div class="barra-horizontal"></div>
-    <div class="campo-input">
-        <label for="email">Seu e-mail*</label>
-        <input type="email" id="email" />
-      </div>
-      <div class="campo-input">
-        <label for="password">Sua senha*</label>
-        <input type="password" id="password" />
-      </div>
-      <div class="lembrar-me">
-        <input type="checkbox" />
-        <p>Lembrar-me</p>
-      </div>
-        
+    <form>
+        <div class="login-screen">
+            <p style="font-size: 2rem; font-weight: bold;">Cadastre-se!</p>
+            <div class="login-screen-content">
+                <p          >Nome</p>
+                <input>
+                <p>Email</p>
+                <input>
+                <p>Senha</p>
+                <input type="password">
+                <p>Confirme sua senha</p>
+                <input type="password">
 
-        <p>Esqueceu sua senha?<a href="#">Clique aqui!</a></p>
-            
-    <button class="cadastro">Cadastre-se</button>
-        
-      </form>
+                <a href="index.html">
+                    <button class="button-css">
+                    Cadastrar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
 </body>
+
+
+<style>
+    .login-screen{
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        align-content: center;
+        width: 20%;
+        padding-top: 40px;
+        box-shadow: 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .login-screen-content{
+        background-color: rgb(255, 255, 255);
+        width: 75%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .login-screen-content p {
+        text-align: left;
+        font-size: 0.75rem;
+        color: grey;
+        padding-top: 15px;
+        padding-bottom: 3px;
+    }
+    .login-screen-content input {
+        width: 95%;
+        height: 1.5rem;
+
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        border: none;
+        font-weight: 600;
+        outline: none;
+
+        background: transparent;
+        color: #505050;
+        box-shadow:inset 0 0 5px #dddddd;
+    }
+    .button-css {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: 1rem;
+
+        background-color: rgb(206, 141, 203);
+        transition-duration: 0.4s;
+        box-shadow: 0 6px 20px 0 rgba(0,0,0,0.19);
+        color: white;
+
+        border-radius: 30px;
+        border: none;
+        font-weight: 600;
+        font-size: large;
+    }
+    .button-css:hover {
+        background-color: #c264b5; /* Green */
+        cursor: pointer;
+        color: white;
+    }
+</style>
 
 </html>
