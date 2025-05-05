@@ -31,13 +31,12 @@
             <nav class="nav-menu" :class="{ 'open': VerMobileMenu }">
                 <a href="index.html">Home</a>
                 <a href="#product">Produtos</a>
-                <a href="carrinho.html">Carrinho</a>
                 <a href="#sobre">Sobre</a>
             </nav>
             <div class="header-icons">
                 <input type="text" placeholder="Pesquisar..." class="search-input">
                 <div class="cart-container" @click="AlterarCart">
-                    <a href="carrinho.html"><img src="assets/images/cart.png" alt="Carrinho" class="cart-icon"></a>
+                    <a href=""><img src="assets/images/cart.png" alt="Carrinho" class="cart-icon"></a>
                     <span class="cart-count" v-if="cart.length > 0">{{ cart.length }}</span>
                 </div>
                 <div class="user">
