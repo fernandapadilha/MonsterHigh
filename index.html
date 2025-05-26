@@ -1,64 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <title>Monster High Shop</title>
-   
+
     <!--VUE CDN-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- STYLE -->
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
 
 <body>
-<div class="header">
-    <div class= "text">
-    <h1>Monster High Shop</h1>
-    </div>
-</div>
     <div id="app">
-        <div class="cart">Cart: {{ cart }}</div>
-        <div class="product-display">
-            <div v-for="product in products" :key="product.id" class="product-container">
-                <div class="product-image">
-                    <img :src="product.image" alt="Imagem do produto">
+        <header class="header">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="">
+            </a>
+            <div class="alterar-menu" @click="AlterarMenu">
+                <img v-if="!VerMobileMenu" src="assets/images/menu-traco.png" alt="Abrir menu">
+                <img v-else src="assets/images/fechar.png" alt="Fechar menu">
+            </div>
+            <nav class="nav-menu" :class="{ 'open': VerMobileMenu }">
+                <a href="index.html">Home</a>
+                <a href="#product">Produtos</a>
+                <a href="">Carrinho</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+            <div class="header-icons">
+                <input type="text" placeholder="Pesquisar..." class="search-input">
+                <div class="cart-container" @click="AlterarCart">
+                    <img src="assets/images/carrinho.png" alt="Carrinho" class="cart-icon">
+                    <span class="cart-count" v-if="cart.length > 0">{{ cart.length }}</span>
                 </div>
-        
-                <div class="product-info">
-                    <h1>{{ product.title + " " + product.brand }}</h1>
-                    <p v-if="product.inStock > 10">Em estoque</p>
-                    <p v-else-if="product.inStock <= 10 && product.inStock >= 1">Restam poucas unidades</p>
-                    <p v-else>Fora de estoque</p>
-                    <ul class="details">
-                        <li v-for="detail in product.details">{{ detail }}</li>
-                    </ul>
-                    <div class="cont-dois">
-                        <div class="cores">
-                            <div v-for="variant in product.variants" :key="variant.id"
-                                @mouseover="changeImage(product, variant.image)"
-                                class="color-circle"
-                                :style="{ backgroundColor: variant.color }">
+            <div>
+                    <a href="cadastro.html"><img src="assets/images/perfil.png" height="20rem" alt="icone-perfil"></a>
+                </div>
+                <div class="user">
+                    <img src="assets/images/user.png" alt="">
+                </div>
+            </div>
+        </header>
+        <main>
+       
+            <div class="product-display" id="product">
+                <div v-for="product in products" :key="product.id" class="product-container">
+                    <div class="product-image">
+                        <img :src="product.image" alt="Imagem do produto" class="card-img">
+                    </div>
+
+                    <div class="product-info">
+                        <h1>{{ product.title + " " + product.brand }}</h1>
+                        <p v-if="product.inStock > 10">Em estoque</p>
+                        <p v-else-if="product.inStock <= 10 && product.inStock >= 1">Restam poucas unidades</p>
+                        <p v-else>Fora de estoque</p>
+                        <ul class="details">
+                            <li v-for="detail in product.details">{{ detail }}</li>
+                        </ul>
+                        <div class="cont-dois">
+                            <div class="cores">
+                                <div v-for="variant in product.variants" :key="variant.id"
+                                    @mouseover="changeImage(product, variant.image)" class="color-circle"
+                                    :style="{ backgroundColor: variant.color }">
+                                </div>
                             </div>
-                        </div>
-                        <div class="btn">
-                            <button class="button" :class="{ disabledButton: product.inStock < 1 }"
-                                v-on:click="addToCart"
-                                :disabled="product.inStock < 1">
-                                Adicionar ao carrinho
-                            </button>
+
+                            <div class="btn">
+                                <button class="button" :class="{ disabledButton: product.inStock < 1 }"
+                                    @click="addToCart(product)" :disabled="product.inStock < 1">
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="banner-monster">
+                <div class="conteudo-banner">
+                    <h2>Universo Monster High</h2>
+                    <p>Participe dessa aventura assustadoramente divertida!</p>
+                    <button class="button">Cadastrar</button>
+                </div>
+                <div class="monster-banner-image">
+                    <img src="assets/images/bannerDracula.png" alt="Personagem Monster High">
+                </div>
+            </div>
+        </main>
     </div>
-   
+
+    <footer id="sobre">
+        <div class="footer-container">
+            <img src="assets/images/logo.png" alt="Logo">
+            <h4>© Todos os direitos reservados a Monster High Shop</h2>
+        </div>
+    </footer>
+
 </body>
 
-    <!--JAVASCRIPT-->
-    <script src="assets/script.js"></script>
+<!--JAVASCRIPT-->
+<script src="assets/script.js"></script>
+
 </html>

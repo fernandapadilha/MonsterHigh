@@ -1,14 +1,26 @@
-
-const { createApp, ref } = Vue
-
+const { createApp, ref, onMounted } = Vue
 
 createApp({
     setup() {
-        const cart = ref(0);
-        const addToCart = () => { cart.value += 1 };
-      
+        const cart = ref([]);
+        const showCart = ref(false); 
+
+        const addToCart = (product) => {
+            cart.value.push(product);
+        };
+
+        const AlterarCart = () => {
+            showCart.value = !showCart.value;
+        };
+
         const changeImage = (product, variantImage) => {
             product.image = variantImage;
+        };
+        
+        const VerMobileMenu = ref(false);
+
+        const AlterarMenu = () => {
+            VerMobileMenu.value = !VerMobileMenu.value;
         };
 
         const products = ref([
@@ -134,6 +146,29 @@ createApp({
             }
         ]);
 
-        return { cart, addToCart, products, changeImage };
+        const slides = ref([
+            { id: 1, image: 'assets/images/banner-monster.webp', alt: 'Banner 1' },
+            { id: 2, image: 'assets/images/banner_Monster.jpg', alt: 'Banner 2' },
+            { id: 3, image: 'assets/images/banner.jpg', alt: 'Banner 3' }
+        ]);
+        onMounted(() => {
+            new Swiper('.swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+
+        return { cart, addToCart, products, changeImage, showCart, AlterarCart, slides, VerMobileMenu, AlterarMenu };
     }
 }).mount('#app');
