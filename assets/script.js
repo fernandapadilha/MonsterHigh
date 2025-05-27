@@ -172,3 +172,4 @@ createApp({
         return { cart, addToCart, products, changeImage, showCart, AlterarCart, slides, VerMobileMenu, AlterarMenu };
     }
 }).mount('#app');
+
