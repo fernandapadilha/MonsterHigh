@@ -1,21 +1,21 @@
 {
     "name": "Monster High Shop",
     "short_name": "MHS",
-    "start_url": "/index.html",
+    "start_url": ".",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#ffcc00",
+    "theme_color": "#ffcc00",
+    "description": "Compre suas monstrinhas favoritas conosco!",
     "icons": [
         {
-            "src": "/icon/pwa-192x192.png",
+            "src": "/assets/images/pwa-192x192.png",
             "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
+            "type": "image/png"
         },
         {
             "src": "/icon/pwa-512x512.png",
             "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
+            "type": "image/png"
         }
         ]
 }
