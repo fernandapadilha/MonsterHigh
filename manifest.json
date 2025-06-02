@@ -3,8 +3,8 @@
     "short_name": "MHS",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#ffcc00",
-    "theme_color": "#ffcc00",
+    "background_color": "#fff",
+    "theme_color": "#fff",
     "description": "Compre suas monstrinhas favoritas conosco!",
     "icons": [
         {
